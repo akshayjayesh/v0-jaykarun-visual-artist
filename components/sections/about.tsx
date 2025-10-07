@@ -5,11 +5,11 @@ export function About() {
     <section id="about" className="section section-muted">
       <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         <div className="md:col-span-3 flex flex-col gap-6">
-          <h2 className="font-serif text-[84px] md:text-[128px] leading-tight tracking-tight text-left">About</h2>
+          <h2 className="font-serif text-4xl md:text-[84px] lg:text-[128px] leading-tight tracking-tight text-left">About</h2>
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2F353eabf2863f41a9a764282c8d70f687?format=webp&width=800"
+            src="https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2F03cc6fb141454342bfff607e33ce50ee?format=webp&width=800"
             alt="Jay Karun painting outdoors"
-            className="w-48 md:w-full h-auto object-cover rounded-md bg-muted"
+            className="w-36 md:w-48 lg:w-full h-auto object-cover rounded-md bg-muted"
           />
         </div>
         <div className="md:col-span-9">

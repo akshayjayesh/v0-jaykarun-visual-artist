@@ -57,22 +57,24 @@ export function AvailableArtworks() {
   return (
     <section id="available-works" className="section">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="font-serif text-3xl md:text-4xl tracking-tight">Available Artworks</h2>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {artworks.map((a) => (
-            <article key={`${a.title}-${a.size}`} className="group">
-              <img
-                src={`/.jpg?height=360&width=540&query=${encodeURIComponent(a.placeholderQuery)}`}
-                alt={a.alt}
-                className="w-full h-60 object-cover rounded-md bg-muted"
-              />
-              <div className="mt-3">
-                <h3 className="text-lg font-medium">{a.title}</h3>
-                <p className="text-sm text-muted-foreground">{a.medium}</p>
-                <p className="text-sm text-muted-foreground">{a.size}</p>
-              </div>
-            </article>
-          ))}
+        <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-center">Available Artworks</h2>
+        <div className="mt-8 flex justify-center">
+          <div className="grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {artworks.map((a) => (
+              <article key={`${a.title}-${a.size}`} className="group">
+                <img
+                  src={`/.jpg?height=360&width=540&query=${encodeURIComponent(a.placeholderQuery)}`}
+                  alt={a.alt}
+                  className="w-full h-60 object-cover rounded-md bg-muted mx-auto"
+                />
+                <div className="mt-3 text-center">
+                  <h3 className="text-lg font-medium">{a.title}</h3>
+                  <p className="text-sm text-muted-foreground">{a.medium}</p>
+                  <p className="text-sm text-muted-foreground">{a.size}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

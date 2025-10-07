@@ -12,13 +12,19 @@ export function Hero() {
           alt="Black and white portrait facing right"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* subtle overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/0" />
+        {/* subtle overlay replaced with decorative background image */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+          style={{
+            backgroundImage:
+              "url(https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2F7a2061cbd94f426b91c4b1bf515e2061)",
+          }}
+        />
 
-        {/* centered title on left */}
+        {/* decorative text is part of the image; keep DOM copies hidden to match design */}
         <div className="relative z-10 mx-auto max-w-6xl h-full px-4 flex flex-col justify-center">
-          <h1 className="font-serif leading-none tracking-tight text-6xl md:text-8xl lg:text-9xl">jaykarun</h1>
-          <p className="mt-3 text-xl md:text-2xl">Visual Artist</p>
+          <h1 className="hidden font-serif leading-none tracking-tight text-6xl md:text-8xl lg:text-9xl">jaykarun</h1>
+          <p className="hidden mt-3 text-xl md:text-2xl">Visual Artist</p>
         </div>
 
         {/* bottom roles strip */}

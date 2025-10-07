@@ -2,20 +2,18 @@
 
 export function About() {
   return (
-    <section id="about" className="section">
-      <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        <div className="md:col-span-1">
+    <section id="about" className="section section-muted">
+      <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div className="md:col-span-3 flex flex-col gap-6">
+          <h2 className="font-serif text-[84px] md:text-[128px] leading-tight tracking-tight text-left">About</h2>
           <img
-            src={`/.jpg?height=640&width=640&query=${encodeURIComponent(
-              "artist working outdoor painting on easel"
-            )}`}
+            src="https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2F353eabf2863f41a9a764282c8d70f687?format=webp&width=800"
             alt="Jay Karun painting outdoors"
-            className="w-full h-64 md:h-full object-cover rounded-md bg-muted"
+            className="w-48 md:w-full h-auto object-cover rounded-md bg-muted"
           />
         </div>
-        <div className="md:col-span-2">
-          <h2 className="font-serif text-3xl md:text-4xl tracking-tight">About</h2>
-          <p className="mt-4 text-xl font-medium text-muted-foreground">“Each new day, each new experience inspires me.”</p>
+        <div className="md:col-span-9">
+          <p className="mt-1 text-2xl font-medium text-muted-foreground">“Each new day, each new experience inspires me.”</p>
           <p className="mt-4 leading-relaxed text-pretty">
             Art is a conversation for Jay Karun. The canvas is where his mind makes its most eloquent remarks. His
             observations on the canvas are a window to his forthright and thoughtful mind, reflecting his profound

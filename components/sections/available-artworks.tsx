@@ -8,13 +8,15 @@ type Artwork = {
   placeholderQuery: string
 }
 
-const artworks: Artwork[] = [
+const artworks: (Artwork & { imageUrl?: string })[] = [
   {
     title: "Loose Talk",
     medium: "Acrylic on canvas",
     size: "21 x 21 Inch",
     alt: "Three abstract figures with vibrant colors against gray.",
     placeholderQuery: "abstract three figures vibrant colors on gray background",
+    imageUrl:
+      "https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2Fae9bbbb6b1574ea18e5c9df35e78f227?format=webp",
   },
   {
     title: "Loose He & She",
@@ -22,6 +24,8 @@ const artworks: Artwork[] = [
     size: "21 x 21 Inch",
     alt: "Two abstract figures in blues and purples.",
     placeholderQuery: "two abstract figures blue and purple",
+    imageUrl:
+      "https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2Fff0b78b389b14489aabbbd73e5901810?format=webp",
   },
   {
     title: "Kite Flyers",
@@ -29,6 +33,8 @@ const artworks: Artwork[] = [
     size: "21 x 21 Inch",
     alt: "Bright abstract resembling kites in the sky.",
     placeholderQuery: "abstract kites flying bright yellow blue pink",
+    imageUrl:
+      "https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2F19a06554e5c44d398057ca3724f6e2b4?format=webp",
   },
   {
     title: "Dogs Day",
@@ -36,6 +42,8 @@ const artworks: Artwork[] = [
     size: "36 x 36 Inch",
     alt: "Dogs walking in a dark forest at night.",
     placeholderQuery: "dogs walking at night forest dark blues browns painting",
+    imageUrl:
+      "https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2Faa1f68d621bc427b8ae5e16513591865?format=webp",
   },
   {
     title: "Transformation",
@@ -43,6 +51,8 @@ const artworks: Artwork[] = [
     size: "18 x 18 Inch",
     alt: "Two animal-like figures on yellow backdrop.",
     placeholderQuery: "abstract animal figures yellow backdrop blue orange",
+    imageUrl:
+      "https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2F2bfb0909bf344e9cbc3313cc99282a7a?format=webp",
   },
   {
     title: "Transformation",
@@ -50,6 +60,8 @@ const artworks: Artwork[] = [
     size: "21 x 21 Inch",
     alt: "Watercolor cranes near water with delicate branches.",
     placeholderQuery: "watercolor cranes near water delicate branches blue white",
+    imageUrl:
+      "https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2Ff09bf4a617084b86896e073dce003139?format=webp",
   },
 ]
 
@@ -57,22 +69,24 @@ export function AvailableArtworks() {
   return (
     <section id="available-works" className="section">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="font-serif text-3xl md:text-4xl tracking-tight">Available Artworks</h2>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {artworks.map((a) => (
-            <article key={`${a.title}-${a.size}`} className="group">
-              <img
-                src={`/.jpg?height=360&width=540&query=${encodeURIComponent(a.placeholderQuery)}`}
-                alt={a.alt}
-                className="w-full h-60 object-cover rounded-md bg-muted"
-              />
-              <div className="mt-3">
-                <h3 className="text-lg font-medium">{a.title}</h3>
-                <p className="text-sm text-muted-foreground">{a.medium}</p>
-                <p className="text-sm text-muted-foreground">{a.size}</p>
-              </div>
-            </article>
-          ))}
+        <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-center">Available Artworks</h2>
+        <div className="mt-8 flex justify-center">
+          <div className="grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {artworks.map((a) => (
+              <article key={`${a.title}-${a.size}`} className="group bg-muted/80 p-3 rounded-md">
+                <img
+                  src={a.imageUrl ?? `/.jpg?height=360&width=540&query=${encodeURIComponent(a.placeholderQuery)}`}
+                  alt={a.alt}
+                  className="w-full h-48 object-cover rounded-sm bg-muted"
+                />
+                <div className="mt-3 text-left">
+                  <h3 className="text-base font-medium">{a.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Medium: {a.medium}</p>
+                  <p className="text-sm text-muted-foreground">Size: {a.size}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

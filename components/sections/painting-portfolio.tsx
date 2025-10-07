@@ -69,7 +69,7 @@ export function PaintingPortfolio() {
               <div className="mt-3">
                 <h3 className="text-lg font-medium">{it.title}</h3>
                 <p className="text-sm text-muted-foreground">{it.medium}</p>
-                <p className="text-sm text-muted-foreground">{it.status}</p>
+                <p className="text-sm text-muted-foreground"><span className="font-semibold">Status:</span> {it.status}</p>
               </div>
             </article>
           ))}

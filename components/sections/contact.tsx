@@ -90,9 +90,7 @@ export function Contact() {
         </div>
         <div>
           <img
-            src={`/.jpg?height=960&width=720&query=${encodeURIComponent(
-              "close up of colorful abstract painting texture"
-            )}`}
+            src="https://cdn.builder.io/api/v1/image/assets%2F9e5464ed21f1499c91aab477b8b54d6e%2Ffd847cb96289478f942f23c8d7169737?format=webp&width=960"
             alt="Abstract painting close up"
             className="w-full h-72 md:h-full object-cover rounded-md bg-muted"
           />

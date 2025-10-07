@@ -60,15 +60,15 @@ export function PaintingPortfolio() {
         <h2 className="font-serif text-3xl md:text-4xl tracking-tight">Painting Portfolio</h2>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((it) => (
-            <article key={it.title} className="group">
+            <article key={it.title} className="group bg-muted/80 p-3 rounded-md">
               <img
                 src={`/.jpg?height=360&width=540&query=${encodeURIComponent(it.placeholderQuery)}`}
                 alt={it.alt}
-                className="w-full h-60 object-cover rounded-md bg-muted"
+                className="w-full h-48 object-cover rounded-sm bg-muted"
               />
-              <div className="mt-3">
-                <h3 className="text-lg font-medium">{it.title}</h3>
-                <p className="text-sm text-muted-foreground">{it.medium}</p>
+              <div className="mt-3 text-left">
+                <h3 className="text-base font-medium">{it.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">Medium: {it.medium}</p>
                 <p className="text-sm text-muted-foreground"><span className="font-semibold">Status:</span> {it.status}</p>
               </div>
             </article>

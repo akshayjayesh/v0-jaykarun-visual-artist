@@ -61,16 +61,16 @@ export function AvailableArtworks() {
         <div className="mt-8 flex justify-center">
           <div className="grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {artworks.map((a) => (
-              <article key={`${a.title}-${a.size}`} className="group">
+              <article key={`${a.title}-${a.size}`} className="group bg-muted/80 p-3 rounded-md">
                 <img
                   src={`/.jpg?height=360&width=540&query=${encodeURIComponent(a.placeholderQuery)}`}
                   alt={a.alt}
-                  className="w-full h-60 object-cover rounded-md bg-muted mx-auto"
+                  className="w-full h-48 object-cover rounded-sm bg-muted"
                 />
-                <div className="mt-3 text-center">
-                  <h3 className="text-lg font-medium">{a.title}</h3>
-                  <p className="text-sm text-muted-foreground">{a.medium}</p>
-                  <p className="text-sm text-muted-foreground">{a.size}</p>
+                <div className="mt-3 text-left">
+                  <h3 className="text-base font-medium">{a.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Medium: {a.medium}</p>
+                  <p className="text-sm text-muted-foreground">Size: {a.size}</p>
                 </div>
               </article>
             ))}
